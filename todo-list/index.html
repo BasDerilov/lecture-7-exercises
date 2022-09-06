@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Task Tracker</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body class="bg-light">
+    <header class="mb-5">
+      <div class="bg-black d-flex p-3 justify-content-between">
+        <div class="d-grid gap-2">
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#create-task-modal"
+          >
+            Create new task
+          </button>
+        </div>
+        <div class="d-flex justify-content-between text-white">
+          <p class="m-2">completed: <span id="completed-tasks">0</span></p>
+          <p class="m-2">uncompleted: <span id="uncompleted-tasks">0</span></p>
+        </div>
+        <div class="d-grid gap-2">
+          <button type="button" name="removeAllBtn" id="remove-all-btn" class="btn btn-danger">
+            Delete All
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="row" id="cardContainer"></div>
+      </div>
+      <div
+        class="modal fade"
+        id="create-task-modal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="task-creator-titel"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="task-creator-titel">Create your task</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="task-title-creator" class="form-label">The title of your task</label>
+                <textarea
+                  class="form-control"
+                  name="task-title-creator"
+                  id="task-title-creator"
+                  rows="1"
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="task-content-creator" class="form-label"
+                  >the content of your task:</label
+                >
+                <textarea
+                  class="form-control"
+                  name="task-content-creator"
+                  id="task-content-creator"
+                  rows="4"
+                ></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button
+                id="create-task-btn"
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Create
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./js/index.js" type="module"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+      integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      const myModal = new bootstrap.Modal(document.getElementById("create-task-modal"));
+    </script>
+  </body>
+</html>
